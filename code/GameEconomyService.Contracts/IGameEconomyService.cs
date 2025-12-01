@@ -30,15 +30,14 @@ namespace GameEconomyService.Contracts
         event Action<EconomyConfig> OnConfigUpdated;
 
         /// <summary>
-        /// Возвращает текущий баланс валют игрока из локальной памяти (мгновенно).
+        /// Возвращает текущий баланс валют игрока из локальной памяти.
         /// </summary>
         List<CurrencyBalance> GetCachedBalances();
 
         /// <summary>
-        /// Получает список всех валют.
-        /// Обычно вызывается единоджы при старте для настройки UI.
+        /// Возвращает список всех валют.
         /// </summary>
-        Task<List<Currency>> GetCurrencyConfigsAsync();
+        List<Currency> GetCachedCurrencies();
 
         /// <summary>
         /// Попытка обменять одну валюту на другую по актуальному курсу.

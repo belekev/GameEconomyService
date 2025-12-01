@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEconomyService.Contracts", "GameEconomyService.Contracts\GameEconomyService.Contracts.csproj", "{3E36DD34-8D2B-40F6-BC2C-3B66C155CCD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEconomyService.SDK", "GameEconomyService.SDK\GameEconomyService.SDK.csproj", "{1BA2E3DE-626A-4DE9-89E8-C02AB7518445}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{3E36DD34-8D2B-40F6-BC2C-3B66C155CCD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E36DD34-8D2B-40F6-BC2C-3B66C155CCD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E36DD34-8D2B-40F6-BC2C-3B66C155CCD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA2E3DE-626A-4DE9-89E8-C02AB7518445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA2E3DE-626A-4DE9-89E8-C02AB7518445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA2E3DE-626A-4DE9-89E8-C02AB7518445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA2E3DE-626A-4DE9-89E8-C02AB7518445}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3E36DD34-8D2B-40F6-BC2C-3B66C155CCD0} = {6609958C-08AD-41C7-9237-B88F84657795}
+		{1BA2E3DE-626A-4DE9-89E8-C02AB7518445} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F67B23FA-7435-453A-85B8-DB8779C6FA36}
