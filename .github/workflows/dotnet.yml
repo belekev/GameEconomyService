@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore core/GameEconomyService.sln
+      run: dotnet restore code/GameEconomyService.sln
     - name: Build
-      run: dotnet build core/GameEconomyService.sln --no-restore
+      run: dotnet build code/GameEconomyService.sln --no-restore
     - name: Test
-      run: dotnet test core/GameEconomyService.sln --no-build --verbosity normal
+      run: dotnet test code/GameEconomyService.sln --no-build --verbosity normal
