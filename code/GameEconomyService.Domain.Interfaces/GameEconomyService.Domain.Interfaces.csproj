@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GameEconomyService.Contracts\GameEconomyService.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>
