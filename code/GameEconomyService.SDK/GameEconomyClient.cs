@@ -9,7 +9,7 @@ namespace GameEconomyService.SDK
     /// </summary>
     public class GameEconomyClient : IGameEconomyService
     {
-        // Техдолг: Хардкод для простоты, далее надо рефоматорить работу над получением URL бекенда и DeviceId клиента. 
+        // Техдолг: Хардкод для простоты, далее надо рефакторить работу над получением URL бекенда и DeviceId клиента. 
         private const string HUB_URL = "http://localhost:5000/hub/economy";
         private const string HARDCODED_DEVICE_ID = "TEST-HARDCODED-DEVICE-ID-12345";
 
