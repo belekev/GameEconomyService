@@ -4,7 +4,7 @@ using GameEconomyService.Domain.Interfaces;
 namespace GameEconomyService.Infrastructure.ServiceTools.Repositories
 {
     /// <summary>
-    /// Простая реализация репозитория валют в памяти для тестов и отладки.
+    /// Простая реализация репозитория валют в памяти для тестования
     /// </summary>
     public class InMemoryCurrencyRepository : ICurrencyRepository
     {

@@ -7,6 +7,7 @@ namespace GameEconomyService.Application.Backend.Controllers
     [ApiController]
     [Route("api/[controller]")]
     // Техдолг: [Authorize(Roles = "Admin")] // добавить авторизацию?
+    // Техдолг: Еще надо уметь обновлять и удалять валюты
     public class CurrenciesController : ControllerBase
     {
         private readonly IEconomyManagementService _managementService;
