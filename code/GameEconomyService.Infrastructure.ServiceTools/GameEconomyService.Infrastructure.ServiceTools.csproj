@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GameEconomyService.Domain.Interfaces\GameEconomyService.Domain.Interfaces.csproj" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GameEconomyService.Domain\GameEconomyService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

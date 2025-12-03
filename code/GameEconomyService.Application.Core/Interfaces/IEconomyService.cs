@@ -9,6 +9,6 @@ namespace GameEconomyService.Application.Core.Interfaces
     public interface IEconomyService
     {
         Task<(EconomyConfig Config, WalletState State)> LoadInitialStateAsync(string userId);
-        Task<ExchangeResult> ExchangeCurrencyAsync(string userId, string sourceCurrencyId, string targetCurrencyId, long unitsToBuy);
+        Task<ExchangeResult> ExchangeCurrencyAsync(string userId, int sourceCurrencyId, int targetCurrencyId, long unitsToBuy);
     }
 }

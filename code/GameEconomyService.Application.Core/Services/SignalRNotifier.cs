@@ -25,5 +25,12 @@ namespace GameEconomyService.Application.Core.Services
             // Используем константу из общего контракта
             await _hubContext.Clients.All.SendAsync(SignalRConfigContract.PushConfigUpdated, newConfig);
         }
+
+        public async Task NotifyBalanceUpdateAsync(string userId, WalletState newState)
+        {
+            // Отправляем сообщение конкретному пользователю
+            // Техдолг: обсудать - userId здесь должен совпадать с тем, что используется в SignalR Context.UserIdentifier
+            await _hubContext.Clients.User(userId).SendAsync(SignalRConfigContract.PushBalanceUpdated, newState);
+        }
     }
 }

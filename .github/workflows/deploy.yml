@@ -23,22 +23,18 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      # ИСПРАВЛЕНО: Добавлен путь 'code/GameEconomyService.sln'
       run: dotnet restore code/GameEconomyService.sln 
 
     - name: Build
-      # ИСПРАВЛЕНО: Добавлен путь 'code/GameEconomyService.sln'
       run: dotnet build code/GameEconomyService.sln --configuration Release --no-restore
 
     - name: Test
       # Проверка модульных тестов (если у вас есть тестовый проект)
-      # ИСПРАВЛЕНО: Добавлен путь 'code/GameEconomyService.sln'
       run: dotnet test code/GameEconomyService.sln --no-build --verbosity normal
 
     - name: Publish ASP.NET Core Backend Application
       # Публикуем бэкенд в папку 'publish'
-      # ИСПРАВЛЕНО: Добавлен путь 'code/' к проекту бэкенда
-      run: dotnet publish ./code/GameEconomyService.Backend/GameEconomyService.Backend.csproj -c Release -o ${{ env.DOTNET_ROOT }}/publish
+      run: dotnet publish ./code/GameEconomyService.Backend/GameEconomyService.Application.Backend.csproj -c Release -o ${{ env.DOTNET_ROOT }}/publish
 
     - name: Publish SDK and Contracts DLLs for Client
       # Публикуем библиотеку SDK в папку 'publish/sdk_libs'. 

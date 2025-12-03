@@ -1,4 +1,4 @@
-﻿using GameEconomyService.Contracts.Models;
+﻿using GameEconomyService.Domain.Models;
 using GameEconomyService.Domain.Interfaces;
 
 namespace GameEconomyService.Infrastructure.ServiceTools.Repositories
@@ -13,10 +13,7 @@ namespace GameEconomyService.Infrastructure.ServiceTools.Repositories
 
         public Task<EconomyConfig> GetConfigAsync()
         {
-            var config = new EconomyConfig
-            {
-                Currencies = _currencies.ToList()
-            };
+            var config = new EconomyConfig(_currencies.ToList());
             return Task.FromResult(config);
         }
 
@@ -41,6 +38,12 @@ namespace GameEconomyService.Infrastructure.ServiceTools.Repositories
                 currency.ExchangeRates.Add(rate);
             }
             await Task.CompletedTask;
+        }
+
+        public async Task DeleteCurrencyAsync(int Id)
+        {
+            // Техдолг: реализовать удаление валюты!
+            throw new NotImplementedException();
         }
     }
 }

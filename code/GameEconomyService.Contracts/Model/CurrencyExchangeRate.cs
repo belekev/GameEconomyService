@@ -6,7 +6,7 @@
     [Serializable]
     public struct CurrencyExchangeRate
     {
-        // Id валюты, за которую покупаем другую валюту
+        // Id валюты, которую приобретаем
         public int TargetCurrencyId;
         // Сколько платим в исходной валюте
         public long SourceCurrencyAmount;

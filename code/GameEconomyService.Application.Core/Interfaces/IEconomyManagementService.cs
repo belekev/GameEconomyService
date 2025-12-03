@@ -1,5 +1,5 @@
 ﻿using GameEconomyService.Application.Core.Models;
-using GameEconomyService.Contracts.Models;
+using GameEconomyService.Domain.Models;
 
 namespace GameEconomyService.Application.Core.Interfaces
 {
