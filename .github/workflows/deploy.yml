@@ -1,0 +1,53 @@
+name: ASP.NET Core CI/CD
+
+# Запуск пайплайна при пуше в main или при Pull Request
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_and_publish:
+
+    runs-on: ubuntu-latest # Используем Linux-раннер для экономии времени
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 
+        
+    - name: Setup .NET 8.0
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Restore dependencies
+      # ИСПРАВЛЕНО: Добавлен путь 'code/GameEconomyService.sln'
+      run: dotnet restore code/GameEconomyService.sln 
+
+    - name: Build
+      # ИСПРАВЛЕНО: Добавлен путь 'code/GameEconomyService.sln'
+      run: dotnet build code/GameEconomyService.sln --configuration Release --no-restore
+
+    - name: Test
+      # Проверка модульных тестов (если у вас есть тестовый проект)
+      # ИСПРАВЛЕНО: Добавлен путь 'code/GameEconomyService.sln'
+      run: dotnet test code/GameEconomyService.sln --no-build --verbosity normal
+
+    - name: Publish ASP.NET Core Backend Application
+      # Публикуем бэкенд в папку 'publish'
+      # ИСПРАВЛЕНО: Добавлен путь 'code/' к проекту бэкенда
+      run: dotnet publish ./code/GameEconomyService.Backend/GameEconomyService.Backend.csproj -c Release -o ${{ env.DOTNET_ROOT }}/publish
+
+    - name: Publish SDK and Contracts DLLs for Client
+      # Публикуем библиотеку SDK в папку 'publish/sdk_libs'. 
+      # DLL Contracts также будет скопирована в эту папку как зависимость.
+      run: dotnet publish ./code/GameEconomyService.SDK/GameEconomyService.SDK.csproj -c Release -o ${{ env.DOTNET_ROOT }}/publish/sdk_libs
+
+    - name: Upload Artifact for Deployment
+      # Сохраняем все опубликованные файлы, включая бэкенд и папку sdk_libs, как "artifact"
+      uses: actions/upload-artifact@v4
+      with:
+        name: web-release
+        path: ${{ env.DOTNET_ROOT }}/publish

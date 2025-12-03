@@ -1,0 +1,30 @@
+Build results
+
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+Packages
+
+*/packages/
+
+Rider
+
+.idea/
+
+Visual Studio
+
+.vs/
+*.suo
+*.user
+*.pdb
+*.orig
+
+Logs
+
+*.log
+
+Other
+
+*thumbs.db
