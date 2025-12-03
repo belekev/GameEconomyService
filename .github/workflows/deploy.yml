@@ -34,7 +34,7 @@ jobs:
 
     - name: Publish ASP.NET Core Backend Application
       # Публикуем бэкенд в папку 'publish'
-      run: dotnet publish ./code/GameEconomyService.Backend/GameEconomyService.Application.Backend.csproj -c Release -o ${{ env.DOTNET_ROOT }}/publish
+      run: dotnet publish ./code/GameEconomyService.Application.Backend/GameEconomyService.Application.Backend.csproj -c Release -o ${{ env.DOTNET_ROOT }}/publish
 
     - name: Publish SDK and Contracts DLLs for Client
       # Публикуем библиотеку SDK в папку 'publish/sdk_libs'. 
